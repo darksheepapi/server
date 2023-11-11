@@ -17,7 +17,11 @@ const client = new MongoClient(uri, {
         deprecationErrors: true,
     }
 });
+app.get('/',(req,res)=>{
 
+      res.send("hello world");
+    
+});
 app.post('/db', async (req, res) => {
     try {
         await client.connect();
