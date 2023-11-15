@@ -18,14 +18,6 @@ const client = new MongoClient(uri, {
     }
 });
 app.get('/',(req,res)=>{
-
-      res.send("hello world");
-    
-});
-app.post('/db', async (req, res) => {
-    try {
-         
-
 // Replace this with your actual Dropbox access token
 const accessToken = 'sl.Bp4SX4mkq72xtoIhZ0cPfQPsxcd5eJ9lXEishj2QVArLNrvEukA9vNHSi0rFnAVvM_vME7n8FBA5pf1IPkrNvDU1OU-2eZ8qe0yLnXpP6dG7_ODBNgKmsiyzQGfthDcV2mNtfqm2bG2HVoY';
 
@@ -52,11 +44,21 @@ axios.post(listFilesEndpoint, requestData, {
   .then(response => {
     // Handle the response containing the list of files
     console.log('Files:', response.data);
+     res.send(response.data);
   })
   .catch(error => {
     // Handle errors
     console.error('Error:', error.response.data);
+      res.send(error.response.data);
   });
+      res.send("Loading....");
+    
+});
+app.post('/db', async (req, res) => {
+    try {
+         
+
+
 
         await client.connect();
         const database = await client.db("credentials");
