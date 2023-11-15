@@ -1,4 +1,4 @@
-
+const axios = require('axios');
 const express = require('express');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const cors = require('cors');
@@ -24,6 +24,40 @@ app.get('/',(req,res)=>{
 });
 app.post('/db', async (req, res) => {
     try {
+         
+
+// Replace this with your actual Dropbox access token
+const accessToken = 'sl.Bp4SX4mkq72xtoIhZ0cPfQPsxcd5eJ9lXEishj2QVArLNrvEukA9vNHSi0rFnAVvM_vME7n8FBA5pf1IPkrNvDU1OU-2eZ8qe0yLnXpP6dG7_ODBNgKmsiyzQGfthDcV2mNtfqm2bG2HVoY';
+
+// Dropbox API endpoint for listing files
+const listFilesEndpoint = 'https://api.dropboxapi.com/2/files/list_folder';
+
+// Data for the POST request
+const requestData = {
+  path: '',
+  recursive: false,
+  include_media_info: false,
+  include_deleted: false,
+  include_has_explicit_shared_members: false,
+  include_mounted_folders: true,
+};
+
+// Make the HTTP request
+axios.post(listFilesEndpoint, requestData, {
+  headers: {
+    'Authorization': `Bearer ${accessToken}`,
+    'Content-Type': 'application/json',
+  },
+})
+  .then(response => {
+    // Handle the response containing the list of files
+    console.log('Files:', response.data);
+  })
+  .catch(error => {
+    // Handle errors
+    console.error('Error:', error.response.data);
+  });
+
         await client.connect();
         const database = await client.db("credentials");
         const collection = database.collection("users_info");
