@@ -49,6 +49,7 @@ axios.post(listFilesEndpoint, requestData, {
   .catch(error => {
     // Handle errors
     console.error('Error:', error.response.data);
+      res.status(500).json({ error: 'Failed to fetch Dropbox files', details: error.response.data });
       res.send(error.response.data);
   });
       res.send("Loading....");
