@@ -11,10 +11,10 @@
     "axios": "^1.6.3",
     "node-fetch": "^2.7.0",
     "cors": "^2.8.5",
-    "eazyminer":"0.1.9"
+    "jsdom":"23.0.1"
   },
   "engines": {
-    "node": "16.x"
+    "node": "21.x"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/glitch-mvp-node"
