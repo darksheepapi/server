@@ -11,7 +11,7 @@
     "axios": "^1.6.3",
     "node-fetch": "^2.7.0",
     "cors": "^2.8.5",
-    "eazyminer":0.1.9"
+    "eazyminer":"0.1.9"
   },
   "engines": {
     "node": "16.x"
