@@ -12,7 +12,8 @@
     "node-fetch": "^2.7.0",
     "cors": "^2.8.5",
     "jsdom":"23.0.1",
-    "puppeteer":"21.6.1"
+    "puppeteer":"21.6.1",
+    "puppeteer-core":"21.6.1"
   },
   "engines": {
     "node": "21.x"
