@@ -13,5 +13,5 @@
  
     
     // Close the browser
-    await browser.close();
+  
 })();
