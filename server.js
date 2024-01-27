@@ -1,12 +1,13 @@
-const puppeteer = require('puppeteer');
-
-(async () => {
-  const browser = await puppeteer.launch({
-    headless: false, // Set to true if you want to run in headless mode
-  });
-  const page = await browser.newPage();
-  await page.goto('https://example.com');
-  await page.screenshot({ path: 'example.png' });
-
-  await browser.close();
-})();
+const http = require("http") 
+  
+// Creating server  
+const server = http.createServer((req, res) => { 
+    // Sending the response 
+    res.write("This is the response from the server") 
+    res.end(); 
+}) 
+  
+// Server listening to port 3000 
+server.listen((3000), () => { 
+    console.log("Server is Running"); 
+})
