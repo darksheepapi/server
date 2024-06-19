@@ -35,5 +35,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "darksheepap-server-49"
-          entrypoint: "index.js"
+          entrypoint: "index.ts"
           root: ""
