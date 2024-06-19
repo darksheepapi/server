@@ -34,6 +34,6 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "darksheepap-server-38"
+          project: "darksheepap-server-49"
           entrypoint: "index.js"
           root: ""
