@@ -1,13 +1,9 @@
-const http = require("http") 
-  
-// Creating server  
-const server = http.createServer((req, res) => { 
-    // Sending the response 
-    res.write("This is the response from the server") 
-    res.end(); 
-}) 
-  
-// Server listening to port 3000 
-server.listen((3000), () => { 
-    console.log("Server is Running"); 
-})
+// Deno example using ES modules
+import { serve } from "https://deno.land/std@0.195.0/http/server.ts";
+
+const server = serve({ port: 8000 });
+console.log("http://localhost:8000/");
+
+for await (const req of server) {
+  req.respond({ body: "Hello, World!\n" });
+}
